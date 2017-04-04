@@ -1,0 +1,15 @@
+side-bar {
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 300px;
+    background-color: #AAAAAA;
+}
+
+main-section {
+    display: block;
+    height: 100%;
+    position: fixed;
+    width: calc(100vw - 300px);
+    left: 300px;
+}

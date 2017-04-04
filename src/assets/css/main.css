@@ -1,0 +1,19 @@
+body {
+    margin:0;
+    font-family: Roboto, 'sans-serif';
+}
+
+toolbar {
+    height: 60px;
+    width: 100vw;
+    background-color: #555555;
+    position: fixed;
+}
+
+app {
+    height: calc(100vh - 60px);
+    background-color: #cccccc;
+    width: 100vw;
+    position: fixed;
+    top: 60px;
+}
