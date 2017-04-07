@@ -1,21 +1,6 @@
 <div class="chat-container">
-    <div class="chat-content">
-        <p>You wait for notice.</p>
-    </div>
-    <div class="chat-content left">
-        <p>I wait for notice.</p>
-    </div>
-    <div class="chat-content left">
-        <p>I wait for notice.</p>
-    </div>
-    <div class="chat-content">
-        <p>I wait for notice.</p>
-    </div>
-    <div class="chat-content left">
-        <p>I wait for notice.</p>
-    </div>
-    <div class="chat-content left">
-        <p>I wait for notice.</p>
+    <div *ngFor="let message of conversation.messages" [class]="message.owner ? 'chat-content' : 'chat-content left'">
+        <p>{{message.content}}</p>
     </div>
 </div>
 <input-container>

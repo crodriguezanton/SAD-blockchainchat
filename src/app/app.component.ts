@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ConversationService} from "./services/conversations.service";
 
 @Component({
     selector: 'app',
@@ -9,8 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
     private name:string;
 
-    constructor(){
+    constructor(private conversationService:ConversationService){
         this.name = "Carlos"
+    }
+
+    addConversation(){
+        this.conversationService.addConversation();
     }
 }
 

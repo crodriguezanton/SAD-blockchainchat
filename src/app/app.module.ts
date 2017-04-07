@@ -7,6 +7,10 @@ import {FormsModule} from "@angular/forms";
 import {ChatComponent} from "./components/chat/chat.component";
 import {ChatListComponent} from "./components/chat-list/chat-list.component";
 import {InputComponent} from "./components/input/input.component";
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
+import {ConversationService} from "./services/conversations.service";
+import {MenuBarComponent} from "./components/menu-bar/manu-bar.component";
 
 @NgModule({
     imports: [
@@ -14,16 +18,18 @@ import {InputComponent} from "./components/input/input.component";
         Routing,
         FormsModule,
         HttpModule,
-        JsonpModule
+        JsonpModule,
+        MaterialModule,
     ],
     declarations: [
         AppComponent,
         ChatComponent,
         ChatListComponent,
-        InputComponent
+        InputComponent,
+        MenuBarComponent
     ],
-    providers: [],
-    bootstrap: [ AppComponent, ChatComponent, ChatListComponent ]
+    providers: [ConversationService],
+    bootstrap: [ AppComponent, ChatListComponent, MenuBarComponent ]
 })
 
 export class AppModule { }

@@ -1,0 +1,22 @@
+.chat-row {
+    padding: 20px;
+    border-bottom: solid 1px #cccccc;
+    height: 100px;
+}
+
+.chat-row.active {
+    background-color: #EEEEEE;
+}
+
+.chat-row:hover {
+    background-color: #EEEEEE;
+}
+
+.chat-row .username {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.chat-row .last-message {
+    color: #5a647e;
+}

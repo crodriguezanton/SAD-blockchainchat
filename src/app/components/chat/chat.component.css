@@ -1,12 +1,13 @@
 input-container {
     position: fixed;
-    width: 100%;
+    width: calc(100vw - 300px);
     height: 60px;
     bottom: 0;
     background-color: #FFFFFF;
 }
 
 .chat-container {
+    overflow: scroll;
     height: calc(100vh - 160px);
     padding: 20px;
 }

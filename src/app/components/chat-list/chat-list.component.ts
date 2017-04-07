@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {ConversationService} from "../../services/conversations.service";
+import {Conversation} from "../../objects/conversation";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'side-bar',
@@ -7,5 +10,18 @@ import { Component } from '@angular/core';
 })
 
 export class ChatListComponent {
+    private conversations:Conversation[];
+
+    constructor(private conversationService:ConversationService, private router: Router){
+        this.conversations = this.conversationService.getConversations();
+    }
+
+    addConversation(){
+        this.conversationService.addConversation();
+    }
+
+    clickChat(conversation:Conversation) {
+        this.router.navigate(['/chat', conversation.id]);
+    }
 
 }

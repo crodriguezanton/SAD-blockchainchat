@@ -1,12 +1,13 @@
 side-bar {
     display: block;
     position: fixed;
-    height: 100%;
+    overflow: scroll;
+    height: calc(100vh - 66px);
     width: 300px;
-    background-color: #AAAAAA;
+    background-color: #FFFFFF;
 }
 
-main-section {
+.main-section {
     display: block;
     height: 100%;
     position: fixed;

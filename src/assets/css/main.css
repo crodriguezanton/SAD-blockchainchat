@@ -4,16 +4,32 @@ body {
 }
 
 toolbar {
-    height: 60px;
+    height: 66px;
     width: 100vw;
-    background-color: #555555;
+    color: white;
+    background-color: rgb(63, 81, 181);
     position: fixed;
 }
 
+toolbar .title {
+    margin: 22px 20px;
+    display: inline-block;
+    font-size: large;
+    width: 260px;
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
+}
+
+toolbar menu-bar {
+    margin: 22px 20px;
+    display: inline-block;
+    width: calc(100vw - 350px);
+}
+
+
 app {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 66px);
     background-color: #cccccc;
     width: 100vw;
     position: fixed;
-    top: 60px;
+    top: 66px;
 }
