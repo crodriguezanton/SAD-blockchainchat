@@ -20,7 +20,7 @@ toolbar .title {
 }
 
 toolbar menu-bar {
-    margin: 22px 20px;
+    margin: 0 20px;
     display: inline-block;
     width: calc(100vw - 350px);
 }

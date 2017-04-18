@@ -1,7 +1,7 @@
 <!--input id="input-text" class="form-control" type="text"><button (click)="sendMessage()">Send</button>-->
 <div class="input-container">
     <div class="ui fluid action input">
-        <input id="input-text" type="text">
+        <input id="input-text" type="text" (keyup.enter)="sendMessage()">
         <div class="ui button" (click)="sendMessage()">Send</div>
     </div>
 </div>

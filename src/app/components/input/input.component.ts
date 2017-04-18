@@ -19,7 +19,10 @@ export class InputComponent {
     }
 
     sendMessage(){
-        this.conversationService.addMessage(this.conversation, $("#input-text").val());
-        $("#input-text").val("")
+        let input = $("#input-text");
+        if (input.val() != ""){
+            this.conversationService.addMessage(this.conversation, input.val());
+            input.val("");
+        }
     }
 }
