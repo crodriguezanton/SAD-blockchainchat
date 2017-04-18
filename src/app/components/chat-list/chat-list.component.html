@@ -1,4 +1,4 @@
-<div class="chat-row" *ngFor="let conversation of conversations" (click)="clickChat(conversation)" routerLinkActive="active">
+<div class="chat-row" *ngFor="let conversation of conversations" (click)="clickChat($event, conversation)">
     <div class="username">{{conversation.recipient.nickname}}</div>
     <div class="last-message" *ngIf="conversation.lastMessage != null">
         > {{conversation.lastMessage.content}}

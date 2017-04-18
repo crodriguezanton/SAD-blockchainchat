@@ -20,7 +20,9 @@ export class ChatListComponent {
         this.conversationService.addConversation();
     }
 
-    clickChat(conversation:Conversation) {
+    clickChat(event:any ,conversation:Conversation) {
+        $(".chat-row").removeClass("active");
+        $(event.target).closest(".chat-row").addClass("active");
         this.router.navigate(['/chat', conversation.id]);
     }
 
