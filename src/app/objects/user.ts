@@ -1,9 +1,9 @@
 export class User {
-    public id:string;
+    public address:string;
     public nickname:string;
 
-    constructor(id:string, nickname:string){
-        this.id = id;
+    constructor(address:string, nickname:string){
+        this.address = address;
         this.nickname = nickname;
     }
 }

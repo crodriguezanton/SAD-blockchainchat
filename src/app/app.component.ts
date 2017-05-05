@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {ConversationService} from "./services/conversations.service";
+import {Web3Service} from "./services/web3.service";
+
+
 
 @Component({
     selector: 'app',
@@ -10,12 +13,17 @@ import {ConversationService} from "./services/conversations.service";
 export class AppComponent {
     private name:string;
 
+
     constructor(private conversationService:ConversationService){
         this.name = "Carlos"
     }
 
     addConversation(){
         this.conversationService.addConversation();
+    }
+
+    ngAfterViewInit() {
+
     }
 }
 

@@ -11,6 +11,7 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import {ConversationService} from "./services/conversations.service";
 import {MenuBarComponent} from "./components/menu-bar/manu-bar.component";
+import {Web3Service} from "./services/web3.service";
 
 @NgModule({
     imports: [

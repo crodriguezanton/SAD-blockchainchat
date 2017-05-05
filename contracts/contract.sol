@@ -1,3 +1,5 @@
+pragma solidity ^0.4.10;
+
 contract owned {
     function owned() { owner = msg.sender; }
     address owner;
@@ -23,18 +25,43 @@ contract Message {
         return timestamp;
     }
 
-    function isOwned() constant returns(bool){
-        return sender.isOwner();
+    function getSender() constant returns(User){
+        return sender;
     }
 
 }
 
+contract Database {
+    User[] users;
+    Chat[] chats;
+
+    function addUser(User _user) {
+        users.push(_user);
+    }
+
+    function addChat(Chat _chat) {
+        chats.push(_chat);
+    }
+
+    function getChats() constant returns(Chat[]){
+        return chats;
+    }
+
+    function getUsers() constant returns(User[]){
+        return users;
+    }
+}
+
 contract User is owned {
     string name;
-    Chat[] chat;
+    Chat[] chats;
 
     function User(string _name) {
         name = _name;
+    }
+
+    function addChat(Chat _chat) {
+        chats.push(_chat);
     }
 
     function getName() constant returns(string){

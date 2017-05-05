@@ -1,7 +1,20 @@
-<div class="chat-row" *ngFor="let conversation of conversations" (click)="clickChat($event, conversation)">
+<!--<div class="chat-row" *ngFor="let conversation of conversations" (click)="clickChat($event, conversation)">
     <div class="username">{{conversation.recipient.nickname}}</div>
     <div class="last-message" *ngIf="conversation.lastMessage != null">
         > {{conversation.lastMessage.content}}
     </div>
 
+</div>-->
+
+<div class="ui middle aligned selection divided list">
+    <div class="item chat-row" *ngFor="let conversation of conversations" (click)="clickChat($event, conversation)">
+        <div class="right floated content" *ngIf="conversation.lastMessage">
+            <span>{{conversation.lastMessage.timestamp | date : "H:m"}}</span>
+        </div>
+        <img class="ui avatar image" src="https://sigil.cupcake.io/{{conversation.recipient.address}}">
+        <div class="content main-content">
+            <div class="header">{{conversation.recipient.nickname}}</div>
+            <div class="message" *ngIf="conversation.lastMessage">{{conversation.lastMessage.content}}</div>
+        </div>
+    </div>
 </div>

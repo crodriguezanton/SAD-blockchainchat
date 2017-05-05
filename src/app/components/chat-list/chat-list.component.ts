@@ -13,7 +13,9 @@ export class ChatListComponent {
     private conversations:Conversation[];
 
     constructor(private conversationService:ConversationService, private router: Router){
-        this.conversations = this.conversationService.getConversations();
+        this.conversations = this.conversationService.getConversations().sort((a, b) => {
+            return a>b ? -1 : a<b ? 1 : 0
+        });
     }
 
     addConversation(){
