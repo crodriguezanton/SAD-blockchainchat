@@ -17,9 +17,16 @@ export class ChatComponent {
             this.conversation=this.conversationService.getConversation(params.id);
         });
         $(".chat-container").scrollTop($(".chat-container").scrollHeight)
+        
     }
 
     addMessage(){
         let message = this.conversationService.addMessage(this.conversation, "TestMessage");
     }
+
+    retrieve(){
+        this.conversationService.getMessages(this.conversation);
+    }
 }
+
+

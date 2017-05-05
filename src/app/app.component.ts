@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {ConversationService} from "./services/conversations.service";
 import {Web3Service} from "./services/web3.service";
-
-
 
 @Component({
     selector: 'app',
@@ -24,6 +22,7 @@ export class AppComponent {
 
     ngAfterViewInit() {
 
+        console.log();
     }
 }
 

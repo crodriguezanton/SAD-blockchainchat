@@ -1,5 +1,5 @@
 <div class="chat-container">
-    <div *ngFor="let message of conversation.messages" [class]="message.owner ? 'chat-content' : 'chat-content left'">
+    <div *ngFor="let message of conversation.messages" [class]="message.owner ? 'chat-content' : 'chat-content left'" (click)="retrieve()">
         <p>{{message.content}}</p>
     </div>
 </div>

@@ -13,6 +13,7 @@ export class ConversationService {
     private owner:boolean;
     public web3:any;
     public myaddress:string = "0x31631b6c53d29b180c7e4c8641aa2eea04fd129f";
+    public minedelimiter = true;
 
     constructor(){
         this.web3 = new Web3Service();
@@ -52,11 +53,13 @@ export class ConversationService {
     }
 
     getConversation(id:string){
+
         for(let conversation of this.conversations){
             if(conversation.id === id){
-                return conversation;
+                return this.getMessages(conversation);
             }
         }
+
         return null;
     }
 
@@ -74,21 +77,27 @@ export class ConversationService {
     }
 
     getMessages(conversation:Conversation){
+        console.log("retrieving " + conversation)
         conversation.messages = [];
         let messages = this.web3.getChat(conversation.address).getMessages();
         for (let message of messages) {
             conversation.messages.push(this.getMessage(message));
         }
         conversation.lastMessage = conversation.messages[conversation.messages.length-1];
+        return conversation;
     }
 
     getMessage(address:string):Message{
         let message = this.web3.getMessage(address);
-        return new Message(message.address, message.getContent(), this.checkMessageMine(message));
+        let content = message.getContent();
+        let mine = false;
+        if (content.startsWith("-") == this.minedelimiter) {
+            mine = true;
+            content = content.slice(1);
+        }
+
+        return new Message(message.address, content, mine);
     }
 
-    checkMessageMine(message:any):boolean{
-        return message.getSender() == this.myaddress;
-    }
 
 }
